@@ -108,5 +108,28 @@ namespace UsefullLib
 		return Op;
 	}
 
+	static short ChoseOption(vector<string> vStr, char Format = 'V')
+	{
+		short Op;
+
+		if (Format == 'V')
+			Format = '\t';
+		else
+			Format = '\n';
+
+		short n = vStr.size();
+
+		for (short i = 0; i < n; i++)
+		{
+			cout << "[" << i + 1 << "] " << vStr[i] << Format;
+		}
+		cout << endl;
+		do
+		{
+			cin >> Op;
+		} while (Op > n || Op < 1);
+		return Op;
+	}
+
 };
 
